@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var emitter: CAEmitterLayer!
     var intensity: Float = 0.5
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
         
         emitter.emitterCells = cells
         view.layer.addSublayer(emitter)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
