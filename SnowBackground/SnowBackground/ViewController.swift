@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Start the snowing effect
         startSnowing()
     }
 
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         backgroundView.frame = self.view.frame        
     }
     
-    public func startSnowing() {
+    func startSnowing() {
         emitter = CAEmitterLayer()
         
         emitter.emitterPosition = CGPoint(x: view.frame.size.width / 2.0, y: 0)
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         view.layer.addSublayer(emitter)
     }
     
-    public func stopSnowing() {
+    func stopSnowing() {
         emitter?.birthRate = 0
     }
     
