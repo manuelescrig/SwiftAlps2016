@@ -21,18 +21,6 @@ class ViewController: UIViewController {
         backgroundView.image = #imageLiteral(resourceName: "background")
         backgroundView.contentMode = .scaleAspectFill
         view.addSubview(backgroundView)
-        
-        // Snow
-        emitter = CAEmitterLayer()
-        emitter.emitterPosition = CGPoint(x: view.frame.size.width / 2.0, y: 0)
-        emitter.emitterShape = kCAEmitterLayerLine
-        emitter.emitterSize = CGSize(width: view.frame.size.width, height: 1)
-        
-        var cells = [CAEmitterCell]()
-        cells.append(snowFlakeWith(color: UIColor.white))
-        
-        emitter.emitterCells = cells
-        view.layer.addSublayer(emitter)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,9 +30,7 @@ class ViewController: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
-
-        backgroundView.frame = self.view.frame
-        
+        backgroundView.frame = self.view.frame        
     }
     
     public func startSnowing() {
@@ -64,7 +50,6 @@ class ViewController: UIViewController {
     public func stopSnowing() {
         emitter?.birthRate = 0
     }
-    
     
     func snowFlakeWith(color: UIColor) -> CAEmitterCell {
         
@@ -88,6 +73,4 @@ class ViewController: UIViewController {
         flake.contents = whiteImage?.cgImage
         return flake
     }
-
 }
-
