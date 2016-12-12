@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         backgroundView.frame = self.view.frame        
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func startSnowing() {
         emitter = CAEmitterLayer()
         
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
         let whiteImage = image.maskWithColor(color: UIColor.white)
         
         let flake = CAEmitterCell()
-        flake.birthRate = 6.0 * intensity
+        flake.birthRate = 50.0 * intensity
         flake.lifetime = 14.0 * intensity
         flake.lifetimeRange = 0
         flake.color = color.cgColor
@@ -70,7 +74,7 @@ class ViewController: UIViewController {
         flake.spinRange = CGFloat(4.0 * intensity)
         flake.scaleRange = CGFloat(intensity)
         flake.scaleSpeed = CGFloat(-0.1 * intensity)
-        flake.scale = 0.2
+        flake.scale = 0.1
         flake.contents = whiteImage?.cgImage
         return flake
     }
