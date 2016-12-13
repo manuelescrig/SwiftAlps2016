@@ -4,8 +4,9 @@ Examples from the proposals at Swift Alps workshop about Animations.
 
 ### Examples
 [Snow Background Effect](https://github.com/manuelescrig/SwiftAlps2016/tree/master/SnowBackground)
-
-
+<p align="center">
+  <img src="https://github.com/manuelescrig/SwiftAlps2016/blob/master/snow-2.gif?raw=true"/>
+</p>
 
 
 ### Author
